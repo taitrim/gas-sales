@@ -1,5 +1,7 @@
 # Hướng dẫn đóng góp cho GAS Sales Pro
 
+**Ngôn ngữ:** 🇻🇳 Tiếng Việt · 🇬🇧 [English](CONTRIBUTING.en.md)
+
 Cảm ơn bạn đã dành thời gian cải tiến dự án! Dưới đây là quy ước để mọi người
 làm việc chung dễ dàng. Đọc hết mục này trước khi mở Pull Request.
 

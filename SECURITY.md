@@ -1,5 +1,7 @@
 # Chính sách bảo mật
 
+**Ngôn ngữ:** 🇻🇳 Tiếng Việt · 🇬🇧 [English](SECURITY.en.md)
+
 ## Báo cáo lỗ hổng
 
 Nếu bạn phát hiện lỗi bảo mật, **đừng mở Issue công khai**. Hãy gửi tới maintainer

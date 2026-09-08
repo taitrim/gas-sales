@@ -13,6 +13,8 @@
 - **Frontend**: React + TypeScript + Vite (proxy `/api` → backend)
 - **Dữ liệu thuộc về bạn**: tự host, export được, sao lưu bằng 1 lệnh.
 
+**Ngôn ngữ:** 🇻🇳 Tiếng Việt · 🇬🇧 [English](README.en.md)
+
 ## Tính năng
 
 - 🛒 **Bán hàng**: POS + tạo đơn, in hóa đơn, trả hàng/hoàn tiền
