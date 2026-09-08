@@ -1,8 +1,53 @@
-# GAS Sales Pro — Rebuild (MySQL Backend)
+# GAS Sales Pro
 
-Phần mềm quản lý bán hàng được **rebuild lại từ Google Apps Script sang Node.js + Express + MySQL**.
-Giữ nguyên toàn bộ nghiệp vụ của AppScript bản 2.6 (đơn hàng, nhập hàng, tồn kho, đối soát NCC, tài chính)
-và **cấu trúc API action giống hệt bản cũ** để có thể port lại frontend gốc nếu tìm thấy source.
+> Phần mềm quản lý bán hàng cho cửa hàng gas, nước uống, tạp hóa: bán hàng (POS),
+> đơn hàng, nhập hàng, tồn kho tự động, đối soát nhà cung cấp, tài chính, công nợ,
+> khuyến mãi và nhiều chi nhánh — chạy trên server của chính bạn.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/Node-%3E%3D18-339933)](https://nodejs.org)
+[![MySQL](https://img.shields.io/badge/MySQL-8%2B-4479A1)](https://www.mysql.com)
+[![Version](https://img.shields.io/badge/version-2.6.0-blue)](backend/package.json)
+
+- **Backend**: Node.js + Express + MySQL (port từ Google Apps Script, giữ nguyên nghiệp vụ 2.6)
+- **Frontend**: React + TypeScript + Vite (proxy `/api` → backend)
+- **Dữ liệu thuộc về bạn**: tự host, export được, sao lưu bằng 1 lệnh.
+
+## Tính năng
+
+- 🛒 **Bán hàng**: POS + tạo đơn, in hóa đơn, trả hàng/hoàn tiền
+- 📦 **Sản phẩm**: biến thể, combo, giá sỉ/lẻ, **tồn kho tự động** cộng/trừ
+- 🚚 **Nhập hàng**: phiếu nhập từ nhà cung cấp, đối soát công nợ NCC
+- 👥 **Khách hàng**: tích điểm, quy đổi điểm, công nợ
+- 💰 **Tài chính**: báo cáo theo ngày, doanh thu theo nhân viên/danh mục, so sánh kỳ
+- 🏷️ **Khuyến mãi**: chương trình giảm giá, kiểm kê kho, chuyển kho chi nhánh → cửa hàng
+- 🔐 **Phân quyền**: quyền theo màn hình cho nhân viên, nhật ký hoạt động
+- 💾 **Sao lưu**: nút backup/khôi phục + Task Scheduler/cron tự động hằng ngày
+- 📤 **Import Google Sheets**: giữ nguyên ID, upsert, dry-run (không cần viết code)
+- 🧠 **Nhận diện thực đơn từ ảnh** (Gemini)
+
+## Bắt đầu nhanh (máy dev)
+
+```bash
+# Backend (:4000)
+cd backend
+npm install
+copy .env.example .env        # sửa DB_PASSWORD, JWT_SECRET, ...
+npm run db:setup && npm run db:seed
+npm run dev
+
+# Frontend (:5173) — mở 1 terminal khác
+cd frontend
+npm install
+npm run dev
+```
+
+Truy cập `http://localhost:5173`, đăng nhập `admin / admin123`, nhớ đổi mật khẩu.
+
+## Đóng góp & Bảo mật
+
+Xem [`CONTRIBUTING.md`](CONTRIBUTING.md) (quy ước code, cách gửi PR) và
+[`SECURITY.md`](SECURITY.md) (báo cáo lỗ hổng). Dự án phát hành theo **MIT**.
 
 ## Cấu trúc dự án
 
