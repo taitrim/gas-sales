@@ -1,0 +1,26 @@
+{
+  "name": "GAS Sales Pro",
+  "short_name": "GAS Sales",
+  "description": "Phần mềm quản lý bán hàng — đơn hàng, sản phẩm, nhập hàng, tài chính",
+  "lang": "vi",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5f6fb",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/logo?v=2",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/app-icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

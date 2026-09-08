@@ -1,0 +1,29 @@
+# ============================================================
+# systemd service — chạy backend tự động + auto-restart khi crash
+# ============================================================
+# Cách cài (thay /srv/gas-sales-backend bằng đường dẫn thật):
+#   sudo cp deploy/gas-sales.service /etc/systemd/system/gas-sales.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now gas-sales
+#
+# Xem log:  sudo journalctl -u gas-sales -f
+# ============================================================
+
+[Unit]
+Description=GAS Sales Pro Backend
+After=network.target mysql.service
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/gas-sales-backend
+# Khởi chạy bằng Node trực tiếp với NODE_ENV=production
+Environment=NODE_ENV=production
+EnvironmentFile=/srv/gas-sales-backend/.env
+ExecStart=/usr/bin/node src/server.js
+Restart=always
+RestartSec=5
+# Giới hạn tài nguyên hợp lý
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

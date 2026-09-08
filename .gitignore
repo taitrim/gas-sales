@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+frontend/dist/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+backend/.env
+
+# Uploads (ảnh sản phẩm local)
+backend/public/uploads/*
+
+# Backups database (KHÔNG commit dump)
+backend/backups/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Binary local (không commit vào repo)
+cloudflared.exe

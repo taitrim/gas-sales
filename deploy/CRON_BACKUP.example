@@ -1,0 +1,8 @@
+# Backup cấu hình hằng ngày — dùng cho Linux (cron) hoặc WSL
+# ---------------------------------------------------------------
+# 1. Đảm bảo backend/.env có DB_USER/DB_PASSWORD đúng
+# 2. Crontab:
+#      0 2 * * *  cd /srv/gas-sales-backend && node scripts/auto-backup.mjs
+# 3. (Tùy chọn) xóa backup cũ hơn N ngày bằng KEEP_DAYS
+#
+# Với Windows, dùng deploy/auto-backup.ps1 + Task Scheduler thay vì file này.

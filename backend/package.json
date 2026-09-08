@@ -1,0 +1,31 @@
+{
+  "name": "gas-sales-backend",
+  "version": "2.6.0",
+  "description": "GAS Sales Pro - MySQL backend (port from Google Apps Script)",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:setup": "node db/setup.js",
+    "db:seed": "node db/seed.js",
+    "import:sheets": "node scripts/import-from-sheets.mjs",
+    "health": "node -e \"fetch('http://localhost:4000/api/health').then(r=>r.json()).then(console.log)\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.7.0",
+    "googleapis": "^174.0.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.1",
+    "mysql2": "^3.14.0",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,15 @@
+# ============================================================
+# Cloudflare Tunnel - config mau (Windows)
+# ============================================================
+# File này được sinh tự động bởi setup-tunnel.ps1 vào:
+#   %USERPROFILE%\.cloudflared\config.yml
+# KHÔNG cần sửa tay - giữ nguyên bên dưới làm tài liệu tham chiếu.
+
+tunnel: gas-sales
+credentials-file: C:\Users\<USERNAME>\.cloudflared\<TUNNEL_ID>.json
+
+ingress:
+  - hostname: shop.example.com
+    service: http://localhost:4000
+  # Bắt buộc có rule cuối (catch-all) cho toàn bộ hostname khác
+  - service: http_status:404
